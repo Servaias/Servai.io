@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servai</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+      background: linear-gradient(120deg,#000 40%, #00004d);
+    }
+
+    .header {
+      margin-top: 50px;
+      margin-left: 672px;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      margin: -20px 0;
+      position: relative;
+      left: -500px;
+      color: #3867d6;
+      width: 30px;
+    }
+
+    .btnlog {
+      position: relative;
+      text-decoration: none;
+      color: #fff;
+      margin: 20px;
+      top: 10px;
+      left: 0px;
+      font-weight: 700;
+      font-size: 1.3em;
+      transition: 0.3s;
+    }
+
+    .btnlog:hover {
+      color: #3867d6 !important;
+    }
+
+    .btnlog:hover::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #3867d6;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    .heading {
+      position: relative;
+      text-align: center;
+      top: 150px;
+    }
+
+    .heading h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #333;
+      line-height: 1.4;
+      margin-left: -800px;
+    }
+
+    .heading p {
+      position: relative;
+      font-size: 1.7em;
+      top: 30px;
+      left: -305px;
+      color: #fff;
+    }
+
+    .provide {
+      color: #3867d6;
+    }
+
+    .wel {
+      position: relative;
+      left: -45px;
+      top: 55px;
+      font-size: 0.7em;
+      font-weight: 100;
+      color: #fff;
+    }
+
+    .comp {
+      position: relative;
+      left: 15px;
+      top: 50px;
+      font-size: 2.5em;
+      color: #3867d6;
+    }
+
+    .about {
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translate(-50%);
+      color: #fff;
+      text-align: center;
+    }
+
+    .about h3 {
+      margin-bottom: 120px;
+      color: #3867d6;
+      font-size: 2.9em;
+    }
+
+    .about p {
+      font-size: 1.3em;
+    }
+
+    .mission {
+      color: #3867d6;
+      font-size: 1.5em;
+    }
+
+    .services {
+      position: absolute;
+      top: 205%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      text-align: center;
+    }
+
+    .services h4 {
+      margin-bottom: 100px;
+      color: #3867d6;
+      font-size: 2.9em;
+    }
+
+    .square-container {
+      position: absolute;
+      display: flex;
+      left: -400px;
+      gap: 40px;
+    }
+
+    .square {
+      width: 325px;
+      height: 225px;
+      background: linear-gradient(60deg, #000, #0a2472);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.2s;
+    }
+    .square:hover {
+      background: transparent;
+      border: 2px solid #3867d6;
+      border-radius: 50px;
+    }
+
+    .square h5 {
+      font-size: 1.5em;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+    }
+    .square h5:hover {
+      color: #3867d6;
+    }
+    .square.next-line {
+      position: relative;
+      top: 250px;
+      left: -1100px;
+    }
+
+    .why {
+      position: absolute;
+      top: 300%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .why h5 {
+      font-size: 2.5em;
+      color: #3867d6;
+      margin-bottom: 20px;
+    }
+
+    .why p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    .why ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      word-spacing: 4px;
+      font-size: 1.1em;
+    }
+
+    .why li {
+      margin-bottom: 0px;
+    }
+
+    .contact {
+      position: absolute;
+      top: 410%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+    }
+
+    .contact h6 {
+      font-size: 2.5em;
+      color: #3867d6;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 1.2em;
+      line-height: 1.5;
+      color: #ddd;
+      margin: 50px 0;
+      width: 150%;
+      position: relative;
+      left: -25%;
+      text-align: center;
+    }
+
+    .social-media {
+      position: relative;
+      left: 400px;
+      bottom: 100px;
+    }
+    
+    .contact-icons {
+      position: fixed;
+      bottom: -400px;
+      left: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 1.2em;
+    }
+
+    .contact-icons a {
+      text-decoration: none;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .contact-icons a:hover {
+      text-decoration: underline;
+    }
+    /* icons */
+
+    .contact-icons i {
+      position: relative;
+      font-size: 30px;
+      color: #3867d6;
+      left: -120px;
+      display: inline-block; 
+      margin-right: 10px;
+    }
+    .email i {
+      position: relative;
+      left: -295px;
+      top: -15px;
+    }
+    .whatsapp i {
+      position: relative;
+      left: -185px; 
+      top: -13px;
+      font-size: 2em;
+    }
+    .call i{
+      position: relative;
+      left: -225px; 
+      top: -13px;
+    }
+    .linked i{
+      position: relative;
+      left: -120px; 
+      top: -13px;
+    }
+    .insta i{
+      position: relative;
+      left: -120px; 
+      top: -13px;
+    }
+
+    .emaillb{
+      position: relative;
+      left: -105px;
+    }
+    .whatsapp{
+      position: relative;
+      top: -60px;
+      left: -50px;
+    }
+    .call{
+      position: relative;
+      top: -20px;
+      left: -50px;
+      }
+    .calllb{
+      position: relative;
+      left: -50px;
+    }
+    .whatlb{
+      position: relative;
+      left: -24px;
+    }
+    .linked{
+      position: relative;
+      top: 0px;
+    }
+    .linklb{
+      position: relative;
+      left: -18px;
+    }
+    .intlb{
+      position: relative;
+      left: -10px;
+    }
+    .img{
+      position: absolute;
+      top: 200px;
+      left: 700px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <a href="#about-us" class="btnlog">About Us</a>
+    <a href="#services" class="btnlog">Our Services</a>
+    <a href="#why-servai" class="btnlog">Why Servai</a>
+    <a href="https://wa.link/2v4fzq" class="btnlog">Discuss Project</a>
+    <a href="#contact" class="btnlog">Contact Us</a>
+    <h1>Servai</h1>
+  </div>
+
+
+  <div class="heading">
+    <h2>
+      <span class="wel"> Welcome to </span> <br> <span class="comp"> Servai </span>
+    </h2>
+    <p>We Provide <span class="provide">Website Development </span></p>
+  </div>
+
+  <div class="img">
+    <img class="imgg" src="Servai_imgg.png" alt="Your browser do not support image type">
+  </div>
+
+
+    <div class="about" id="about-us">
+    <h3> About Us</h3>
+    <p>
+      At Servai, we believe in empowering businesses with a strong online presence and captivating content. Founded in April 2024 by Akhil Goel, our company is driven by a passion for innovation and creativity. With a focus on website development, content creation, designing, API Development, Consulting & Strategy and Analytics & Reporting we are committed to helping our clients stand out in the digital landscape.
+      <br><br>
+      <b><span class="mission">Our Mission </span></b>
+      <br><br>
+      Our mission at Servai is to provide unparalleled digital solutions tailored to the unique needs of each client. Whether you're a small startup or a large corporation, we are dedicated to delivering top-notch services that exceed expectations and drive results.
+    </p>
+  </div>
+
+
+  <div id="services" class="services">
+    <h4> Our Services </h4>
+    <div class="square-container">
+      <div class="square">
+        <h5>Website Development</h5>
+      </div>
+      <div class="square">
+        <h5>Content Creation</h5>
+      </div>
+      <div class="square">
+        <h5>Designing</h5>
+      </div>
+      <div class="square next-line">
+        <h5>API Development</h5>
+      </div>
+      <div class="square next-line">
+        <h5>Consulting and Strategy</h5>
+      </div>
+      <div class="square next-line">
+        <h5>Analytics and Reporting</h5>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div id="why-servai" class="why">
+    <h5>Why Choose Servai ?</h5><br>
+    <ul>
+      <li><strong>1) Innovative Solutions Powered by AI:</strong> At Servai, we leverage cutting-edge AI technology to enhance our productivity and deliver innovative solutions to our clients.</li>
+      <br><li><strong>2) Continuous Learning and Adaptability:</strong> In an ever-evolving digital landscape, staying ahead of the curve is crucial. At Servai, we are committed to continuous learning and adaptability, constantly refining our skills and staying updated on the latest trends and technologies.</li>
+      <br><li><strong>3) Personalized Service, Tailored to You:</strong> We understand that every business is unique, with its own goals, challenges, and opportunities. That's why we take a personalized approach to every project, taking the time to understand your specific requirements and objectives. Whether you're a startup or a seasoned enterprise, we tailor our services to align with your vision and objectives, ensuring a bespoke solution that fits your needs perfectly.</li>
+      <br><li><strong>4) Commitment to Excellence and Client Satisfaction:</strong> At Servai, excellence is not just a goal – it's a commitment. We hold ourselves to the highest standards of quality and professionalism, we are dedicated to exceeding our clients' expectations and ensuring their complete satisfaction every step of the way. With Servai, you can trust that your digital success is our top priority.</li>
+    </ul>
+  </div>
+
+
+   <div id="contact" class="contact">
+    <h6> Contact Us </h6>
+    <p>
+      Let's help you navigate your digital journey together.
+    </p>
+    <p>Contact us today to discuss your project. Reach out via email or phone and let's create something extraordinary.
+    </p>
+    <div class="contact-icons">
+      <div class="contact-info">
+        <div class="email">
+          <label class="emaillb"><strong>Email</strong></label>
+          <br>
+          <a href="mailto:reach.servai@gmail.com">reach.servai@gmail.com<i class="fas fa-envelope"></i></a>
+        </div>
+        <br><br>
+        <br><br>
+        <div class="whatsapp">
+          <label class="whatlb"><strong>Whatsapp</strong></label><br>
+          <a href="https://wa.me/9499145221">9499145221<i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="call">
+          <label class="calllb"><strong>Call</strong></label><br>
+          <a href="tel:+91 9499145221">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;91+ 9499145221<i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+      <div class="social-media">
+        <div class="linked">
+          <label class="linklb"><strong>Linkedin</strong></label><br>
+          <a href="https://www.linkedin.com/company/servai">Servai<i class="fab fa-linkedin"></i></a>
+        </div>
+        <br><br>
+        <div class="insta">
+          <label class="intlb"><strong>Instagram</strong></label><br>
+          <a href="https://www.instagram.com/servai">Servai<i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
